@@ -32,8 +32,9 @@ describe('Scope', function() {
       scope.$watch(watchFn, listenerFn);
       scope.$digest();
 
-      expect(watchFn).toHaveBeenCalled();
-    })
+      expect(watchFn).toHaveBeenCalledWith(scope);
+    });
+
   });
 
 
