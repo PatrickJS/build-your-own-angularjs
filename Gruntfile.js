@@ -16,7 +16,7 @@ module.exports = function(grunt) {
       unit: {
         src: 'src/**/*.js',
         options: {
-          specs: ['test/**/*.js']
+          specs: ['test/**/*_spec.js']
         }
       }
     }
@@ -24,5 +24,5 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-jasmine');
 };
