@@ -14,7 +14,11 @@ Scope.prototype.$watch = function(watchFn, listenerFn) {
 Scope.prototype.$digest = function() {
   var scope = this;
   scope.$$watchers.forEach(function(watcher) {
-    watcher.watchFn(scope);
-    watcher.listenerFn();
+    var newValue = watcher.watchFn(scope);
+    var oldValue = watcher.last;
+    if (newValue !== oldValue) {
+      watcher.listenerFn(newValue, oldValue, scope);
+      watcher.last = newValue;
+    }
   });
 };
