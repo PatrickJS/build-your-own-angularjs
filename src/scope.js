@@ -5,7 +5,7 @@ function Scope() {
 
 Scope.prototype.$watch = function(watchFn, listenerFn) {
   var watcher = {
-    watch: watchFn,
+    watchFn: watchFn,
     listenerFn: listenerFn
   };
   this.$$watchers.push(watcher);
