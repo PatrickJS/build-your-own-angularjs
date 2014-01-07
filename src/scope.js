@@ -10,3 +10,9 @@ Scope.prototype.$watch = function(watchFn, listenerFn) {
   };
   this.$$watchers.push(watcher);
 };
+
+Scope.prototype.$digest = function() {
+  this.$$watchers.forEach(function(watcher) {
+    watcher.listenerFn();
+  });
+};
