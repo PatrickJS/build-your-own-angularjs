@@ -1,3 +1,5 @@
+var noop = function() {};
+
 function Scope() {
   // $$ are private and should not be called from app code
   this.$$watchers = [];
@@ -6,7 +8,7 @@ function Scope() {
 Scope.prototype.$watch = function(watchFn, listenerFn) {
   var watcher = {
     watchFn: watchFn,
-    listenerFn: listenerFn
+    listenerFn: listenerFn ||  noop
   };
   this.$$watchers.push(watcher);
 };
