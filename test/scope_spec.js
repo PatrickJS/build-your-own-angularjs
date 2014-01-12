@@ -82,7 +82,7 @@ describe('Scope', function() {
         },
         function(newValue, oldValue, scope) {
           if (newValue) {
-            scope.initial newValue.substring(0, 1) + '.';
+            scope.initial = newValue.substring(0, 1) + '.';
           }
         }
       );
