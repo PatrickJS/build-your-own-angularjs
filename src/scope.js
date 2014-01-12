@@ -1,4 +1,4 @@
-var noop = function() {};
+function noop() {}
 
 function Scope() {
   // $$ are private and should not be called from app code
